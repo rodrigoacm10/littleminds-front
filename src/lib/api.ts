@@ -26,14 +26,14 @@ type ApiFailure = {
 
 type ApiResponse<T> = ApiSuccess<T> | ApiFailure
 
-type RegisterPayload = {
+export type RegisterPayload = {
   name: string
   email: string
   password: string
   role?: UserRole
 }
 
-type LoginPayload = {
+export type LoginPayload = {
   email: string
   password: string
 }
