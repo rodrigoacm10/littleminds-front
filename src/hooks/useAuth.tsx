@@ -1,4 +1,11 @@
-import { useEffect, useState } from 'react'
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  type PropsWithChildren,
+} from 'react'
 import {
   ApiError,
   getMe,
@@ -6,12 +13,25 @@ import {
   register,
   type AuthUser,
   type LoginPayload,
+  type LoginResponse,
   type RegisterPayload,
 } from '../lib/api'
 
 const storageKey = 'littleminds.accessToken'
 
-export function useAuth() {
+type AuthContextValue = {
+  token: string | null
+  user: AuthUser | null
+  booting: boolean
+  signIn: (payload: LoginPayload) => Promise<LoginResponse>
+  signUp: (payload: RegisterPayload) => Promise<AuthUser>
+  signOut: () => void
+  ApiError: typeof ApiError
+}
+
+const AuthContext = createContext<AuthContextValue | null>(null)
+
+export function AuthProvider({ children }: PropsWithChildren) {
   const [token, setToken] = useState<string | null>(() =>
     typeof window === 'undefined' ? null : window.localStorage.getItem(storageKey),
   )
@@ -55,13 +75,28 @@ export function useAuth() {
     setUser(null)
   }
 
-  return {
-    token,
-    user,
-    booting,
-    signIn,
-    signUp,
-    signOut,
-    ApiError,
+  const value = useMemo<AuthContextValue>(
+    () => ({
+      token,
+      user,
+      booting,
+      signIn,
+      signUp,
+      signOut,
+      ApiError,
+    }),
+    [token, user, booting],
+  )
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
+}
+
+export function useAuth() {
+  const context = useContext(AuthContext)
+
+  if (!context) {
+    throw new Error('useAuth must be used within AuthProvider')
   }
+
+  return context
 }

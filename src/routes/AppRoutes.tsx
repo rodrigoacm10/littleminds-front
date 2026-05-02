@@ -4,10 +4,33 @@ import {
   Outlet,
   RouterProvider,
 } from 'react-router'
+import { AppLayout } from '../components/AppLayout'
+import { useAuth, AuthProvider } from '../hooks/useAuth'
+import { AIPage } from '../pages/AIPage'
 import { AuthPage } from '../pages/AuthPage'
+import { ForumPage } from '../pages/ForumPage'
+import { ResearchPage } from '../pages/ResearchPage'
 
 function AuthLayout() {
   return <Outlet />
+}
+
+function ProtectedRoute() {
+  const { user, booting } = useAuth()
+
+  if (booting) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-[#fff9f3] text-[#7f5438]">
+        Restaurando sessao...
+      </div>
+    )
+  }
+
+  if (!user) {
+    return <Navigate to="/login" replace />
+  }
+
+  return <AppLayout />
 }
 
 const router = createBrowserRouter([
@@ -27,10 +50,31 @@ const router = createBrowserRouter([
         path: 'cadastro',
         element: <AuthPage />,
       },
+      {
+        element: <ProtectedRoute />,
+        children: [
+          {
+            path: 'ia',
+            element: <AIPage />,
+          },
+          {
+            path: 'forum',
+            element: <ForumPage />,
+          },
+          {
+            path: 'pesquisas',
+            element: <ResearchPage />,
+          },
+        ],
+      },
     ],
   },
 ])
 
 export function AppRoutes() {
-  return <RouterProvider router={router} />
+  return (
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  )
 }

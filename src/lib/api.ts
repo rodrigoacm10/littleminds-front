@@ -38,9 +38,31 @@ export type LoginPayload = {
   password: string
 }
 
-type LoginResponse = {
+export type LoginResponse = {
   accessToken: string
   user: AuthUser
+}
+
+export type ConversationMessage = {
+  id: string
+  conversationId: string
+  role: 'user' | 'assistant'
+  content: string
+  isDeleted: boolean
+  createdAt: string
+}
+
+export type Conversation = {
+  id: string
+  userId: string
+  title: string
+  isArchived: boolean
+  createdAt: string
+  updatedAt?: string
+}
+
+export type ConversationDetail = Conversation & {
+  messages: ConversationMessage[]
 }
 
 class ApiError extends Error {
@@ -96,6 +118,36 @@ async function request<T>(
   return payload.data
 }
 
+async function rawRequest<T extends Record<string, unknown>>(
+  path: string,
+  init?: RequestInit,
+  token?: string,
+): Promise<T> {
+  const response = await fetch(`${API_BASE_URL}${path}`, {
+    ...init,
+    headers: {
+      'Content-Type': 'application/json',
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      ...init?.headers,
+    },
+  })
+
+  const payload = (await response.json().catch(() => null)) as
+    | (T & { success?: boolean; error?: string })
+    | null
+
+  if (!response.ok || payload?.success === false) {
+    const code = payload?.error
+    throw new ApiError(getErrorMessage(code), code)
+  }
+
+  if (!payload) {
+    throw new ApiError('Resposta inesperada da API.')
+  }
+
+  return payload
+}
+
 export async function register(payload: RegisterPayload) {
   return request<AuthUser>('/auth/register', {
     method: 'POST',
@@ -112,6 +164,60 @@ export async function login(payload: LoginPayload) {
 
 export async function getMe(token: string) {
   return request<AuthUser>('/auth/me', { method: 'GET' }, token)
+}
+
+export async function listConversations(token: string, archived?: boolean) {
+  const query = typeof archived === 'boolean' ? `?archived=${archived}` : ''
+  const payload = await rawRequest<{
+    success: true
+    conversations: Conversation[]
+  }>(`/conversations${query}`, { method: 'GET' }, token)
+
+  return payload.conversations
+}
+
+export async function createConversation(title: string, token: string) {
+  const payload = await rawRequest<{
+    success: true
+    conversation: Conversation
+  }>(
+    '/conversations',
+    {
+      method: 'POST',
+      body: JSON.stringify({ title }),
+    },
+    token,
+  )
+
+  return payload.conversation
+}
+
+export async function getConversation(id: string, token: string) {
+  const payload = await rawRequest<{
+    success: true
+    conversation: ConversationDetail
+  }>(`/conversations/${id}`, { method: 'GET' }, token)
+
+  return payload.conversation
+}
+
+export async function sendConversationMessage(
+  conversationId: string,
+  content: string,
+  token: string,
+) {
+  return rawRequest<{
+    success: true
+    userMessage: ConversationMessage
+    assistantMessage: ConversationMessage
+  }>(
+    `/conversations/${conversationId}/chat`,
+    {
+      method: 'POST',
+      body: JSON.stringify({ content }),
+    },
+    token,
+  )
 }
 
 export { API_BASE_URL, ApiError }

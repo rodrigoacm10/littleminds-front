@@ -1,7 +1,7 @@
 import { useEffect, useState, useTransition } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useLocation } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
 import { AuthHero } from '../components/AuthHero'
 import { AuthPanel } from '../components/AuthPanel'
 import { useAuth } from '../hooks/useAuth'
@@ -15,6 +15,7 @@ import {
 
 export function AuthPage() {
   const location = useLocation()
+  const navigate = useNavigate()
   const [mode, setMode] = useState<AuthMode>(
     location.pathname === '/cadastro' ? 'register' : 'login',
   )
@@ -27,6 +28,12 @@ export function AuthPage() {
     setMode(location.pathname === '/cadastro' ? 'register' : 'login')
     setAuthError(null)
   }, [location.pathname])
+
+  useEffect(() => {
+    if (!booting && user) {
+      navigate('/ia', { replace: true })
+    }
+  }, [booting, navigate, user])
 
   const loginForm = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema),
@@ -54,6 +61,7 @@ export function AuthPage() {
     try {
       await signIn(values)
       loginForm.reset()
+      navigate('/ia', { replace: true })
     } catch (error) {
       const message =
         error instanceof ApiError ? error.message : 'Nao foi possivel entrar agora.'
