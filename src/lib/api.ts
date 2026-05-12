@@ -98,6 +98,19 @@ export type PostSupport = {
   createdAt: string
 }
 
+export type Article = {
+  id: string
+  title: string
+  summary: string | null
+  content: string
+  coverImage: string | null
+  isPublished: boolean
+  ageGroup: AgeGroup | null
+  authorId: string
+  createdAt: string
+  updatedAt: string
+}
+
 class ApiError extends Error {
   code?: string
 
@@ -383,6 +396,114 @@ export async function deletePostSupport(postId: string, token: string) {
     { method: 'DELETE' },
     token,
   )
+}
+
+export async function listArticles(params?: {
+  ageGroup?: AgeGroup
+  authorId?: string
+  published?: boolean
+}) {
+  const query = new URLSearchParams()
+
+  if (params?.ageGroup) {
+    query.set('ageGroup', params.ageGroup)
+  }
+
+  if (params?.authorId) {
+    query.set('authorId', params.authorId)
+  }
+
+  if (typeof params?.published === 'boolean') {
+    query.set('published', String(params.published))
+  }
+
+  const suffix = query.toString() ? `?${query.toString()}` : ''
+  const payload = await rawRequest<{
+    success: true
+    articles: Article[]
+  }>(`/articles${suffix}`, { method: 'GET' })
+
+  return payload.articles
+}
+
+export async function getArticle(id: string) {
+  const payload = await rawRequest<{
+    success: true
+    article: Article
+  }>(`/articles/${id}`, { method: 'GET' })
+
+  return payload.article
+}
+
+export async function createArticle(
+  payload: {
+    title: string
+    content: string
+    summary?: string
+    coverImage?: string
+    ageGroup?: AgeGroup
+  },
+  token: string,
+) {
+  const response = await rawRequest<{
+    success: true
+    article: Article
+  }>(
+    '/articles',
+    {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    },
+    token,
+  )
+
+  return response.article
+}
+
+export async function updateArticle(
+  id: string,
+  payload: {
+    title?: string
+    content?: string
+    summary?: string | null
+    coverImage?: string | null
+    ageGroup?: AgeGroup | null
+  },
+  token: string,
+) {
+  const response = await rawRequest<{
+    success: true
+    article: Article
+  }>(
+    `/articles/${id}`,
+    {
+      method: 'PUT',
+      body: JSON.stringify(payload),
+    },
+    token,
+  )
+
+  return response.article
+}
+
+export async function publishArticle(id: string, token: string) {
+  return rawRequest<{
+    success: true
+    article: {
+      id: string
+      title: string
+      isPublished: boolean
+      publishedAt: string
+    }
+  }>(`/articles/${id}/publish`, { method: 'POST' }, token)
+}
+
+export async function unpublishArticle(id: string, token: string) {
+  return rawRequest<{ success: boolean }>(`/articles/${id}/unpublish`, { method: 'POST' }, token)
+}
+
+export async function deleteArticle(id: string, token: string) {
+  return rawRequest<{ success: boolean }>(`/articles/${id}`, { method: 'DELETE' }, token)
 }
 
 export { API_BASE_URL, ApiError }
