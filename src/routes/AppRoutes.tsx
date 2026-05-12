@@ -9,6 +9,7 @@ import { useAuth, AuthProvider } from '../hooks/useAuth'
 import { AIPage } from '../pages/AIPage'
 import { AuthPage } from '../pages/AuthPage'
 import { ForumPage } from '../pages/ForumPage'
+import { ForumPostPage } from '../pages/ForumPostPage'
 import { ResearchPage } from '../pages/ResearchPage'
 
 function AuthLayout() {
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
           {
             path: 'forum',
             element: <ForumPage />,
+          },
+          {
+            path: 'forum/:id',
+            element: <ForumPostPage />,
           },
           {
             path: 'pesquisas',

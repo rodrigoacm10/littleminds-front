@@ -65,6 +65,39 @@ export type ConversationDetail = Conversation & {
   messages: ConversationMessage[]
 }
 
+export type AgeGroup =
+  | 'PRENATAL'
+  | 'BABY'
+  | 'TODDLER'
+  | 'CHILD'
+  | 'TEENAGER'
+
+export type ForumPost = {
+  id: string
+  title: string
+  content: string
+  authorId: string
+  ageGroup?: AgeGroup | null
+  createdAt: string
+  updatedAt: string
+}
+
+export type Comment = {
+  id: string
+  content: string
+  postId: string
+  authorId: string
+  createdAt: string
+  updatedAt: string
+}
+
+export type PostSupport = {
+  id: string
+  userId: string
+  postId: string
+  createdAt: string
+}
+
 class ApiError extends Error {
   code?: string
 
@@ -216,6 +249,138 @@ export async function sendConversationMessage(
       method: 'POST',
       body: JSON.stringify({ content }),
     },
+    token,
+  )
+}
+
+export async function listForumPosts(params?: {
+  ageGroup?: AgeGroup
+  authorId?: string
+}) {
+  const query = new URLSearchParams()
+
+  if (params?.ageGroup) {
+    query.set('ageGroup', params.ageGroup)
+  }
+
+  if (params?.authorId) {
+    query.set('authorId', params.authorId)
+  }
+
+  const suffix = query.toString() ? `?${query.toString()}` : ''
+  const payload = await rawRequest<{
+    success: true
+    posts: ForumPost[]
+  }>(`/forum-posts${suffix}`, { method: 'GET' })
+
+  return payload.posts
+}
+
+export async function getForumPost(id: string) {
+  const payload = await rawRequest<{
+    success: true
+    post: ForumPost
+  }>(`/forum-posts/${id}`, { method: 'GET' })
+
+  return payload.post
+}
+
+export async function createForumPost(
+  payload: {
+    title: string
+    content: string
+    ageGroup?: AgeGroup
+  },
+  token: string,
+) {
+  const payloadResponse = await rawRequest<{
+    success: true
+    post: ForumPost
+  }>(
+    '/forum-posts',
+    {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    },
+    token,
+  )
+
+  return payloadResponse.post
+}
+
+export async function listComments(postId: string) {
+  const payload = await rawRequest<{
+    success: true
+    comments: Comment[]
+  }>(`/comments?postId=${postId}`, { method: 'GET' })
+
+  return payload.comments
+}
+
+export async function createComment(
+  payload: {
+    content: string
+    postId: string
+  },
+  token: string,
+) {
+  const payloadResponse = await rawRequest<{
+    success: true
+    comment: Comment
+  }>(
+    '/comments',
+    {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    },
+    token,
+  )
+
+  return payloadResponse.comment
+}
+
+export async function listPostSupports(postId: string) {
+  const payload = await rawRequest<{
+    success: true
+    supports: PostSupport[]
+    total: number
+  }>(`/post-supports?postId=${postId}`, { method: 'GET' })
+
+  return payload.supports
+}
+
+export async function checkPostSupport(postId: string, token: string) {
+  return rawRequest<{
+    success: true
+    hasSupported: boolean
+    totalSupports: number
+  }>(
+    `/post-supports/check?postId=${postId}`,
+    { method: 'GET' },
+    token,
+  )
+}
+
+export async function createPostSupport(postId: string, token: string) {
+  const payload = await rawRequest<{
+    success: true
+    support: PostSupport
+  }>(
+    '/post-supports',
+    {
+      method: 'POST',
+      body: JSON.stringify({ postId }),
+    },
+    token,
+  )
+
+  return payload.support
+}
+
+export async function deletePostSupport(postId: string, token: string) {
+  return rawRequest<{ success: boolean }>(
+    `/post-supports?postId=${postId}`,
+    { method: 'DELETE' },
     token,
   )
 }
