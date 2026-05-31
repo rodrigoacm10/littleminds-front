@@ -243,14 +243,14 @@ Projeto acadêmico desenvolvido em equipe, com colaboração multidisciplinar en
 
 | Integrante | Papel/Responsabilidade |
 | --- | --- |
-| Carlos Alberto Ramalho Bezerra Neto | [Ex.: Product Owner / Full Stack Developer] |
-| Diego Henrique Rodrigues | [Ex.: Frontend Developer] |
-| Eliel Lucas Trajano Neto | [Ex.: Backend Developer] |
-| Fabianne Arezes de Oliveira Firmino Cabral | [Ex.: UX/UI Designer] |
-| José Gabriel de Oliveira Lino | [Ex.: QA / Documentacao] |
-| Monique Rafaela Carvalho Lopes | [Opcional] |
-| Rafael Antônio Ribeiro Galvão Mendes | [Opcional] |
-| Rodrigo Andrade Cavalcante Muniz | [Opcional] |
+| Carlos Alberto Ramalho Bezerra Neto | Product Owner |
+| Diego Henrique Rodrigues | Desenvolvedor FrontEnd |
+| Eliel Lucas Trajano Neto | Desenvolvedor BackEnd |
+| Fabianne Arezes de Oliveira Firmino Cabral | Desenvolvedora FrontEnd |
+| José Gabriel de Oliveira Lino | QA / Testes |
+| Monique Rafaela Carvalho Lopes | UX/UI Designer |
+| Rafael Antônio Ribeiro Galvão Mendes | QA / Testes |
+| Rodrigo Andrade Cavalcante Muniz | Desenvolvedor Full Stack / Documentação |
 
 ## Considerações Finais
 
