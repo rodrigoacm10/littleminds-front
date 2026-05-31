@@ -1,6 +1,6 @@
 # Little Minds
 
-> Plataforma digital de apoio parental voltada ao desenvolvimento da inteligencia emocional infantil, combinando conteudo especializado, comunidade e inteligencia artificial em uma experiencia acessivel e orientada a impacto social.
+> Plataforma digital de apoio parental voltada ao desenvolvimento da inteligência emocional infantil, combinando conteúdo especializado, comunidade e inteligência artificial em uma experiência acessivel e orientada a impacto social.
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
@@ -13,14 +13,14 @@
 ![Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?logo=vercel&logoColor=white)
 ![Render](https://img.shields.io/badge/Deploy-Render-46E3B7?logo=render&logoColor=black)
 
-## Sumario
+## Sumário
 
 - [Contexto e Funcionamento](#contexto-e-funcionamento)
-- [Acesso Rapido](#acesso-rapido)
+- [Acesso Rápido](#acesso-rápido)
 - [Credenciais de Teste](#credenciais-de-teste)
 - [Funcionalidades](#funcionalidades)
 - [Arquitetura e Tecnologias](#arquitetura-e-tecnologias)
-- [Evolucao de Codigo e Qualidade](#evolucao-de-codigo-e-qualidade)
+- [Evolução de Código e Qualidade](#evolução-de-código-e-qualidade)
 - [Como Executar Localmente](#como-executar-localmente)
 - [Equipe Desenvolvedora](#equipe-desenvolvedora)
 
@@ -28,76 +28,76 @@
 
 ### Problema
 
-O projeto surgiu a partir da seguinte questao: como a tecnologia pode contribuir, de forma pratica e acessivel, para a educacao emocional das criancas dentro do ambiente familiar?
+O projeto surgiu a partir da seguinte questão: como a tecnologia pode contribuir, de forma prática e acessível, para a educação emocional das criancas dentro do ambiente familiar?
 
-Durante a idealizacao, foi identificado que muitos pais e responsaveis enfrentam dificuldades para compreender, estimular e acompanhar o desenvolvimento emocional dos filhos. Apesar da relevancia desse tema, ainda existe uma carencia de plataformas acessiveis, centralizadas e orientadas a apoio continuo nessa jornada.
+Durante a idealização, foi identificado que muitos pais e responsáveis enfrentam dificuldades para compreender, estimular e acompanhar o desenvolvimento emocional dos filhos. Apesar da relevância desse tema, ainda existe uma carência de plataformas acessíveis, centralizadas e orientadas a apoio contínuo nessa jornada.
 
-### Solucao Proposta
+### Solução Proposta
 
-O **Little Minds** e uma plataforma educacional e de apoio parental criada para orientar pais e responsaveis no desenvolvimento da inteligencia emocional infantil desde os primeiros estagios da vida.
+O **Little Minds** e uma plataforma educacional e de apoio parental criada para orientar pais e responsáveis no desenvolvimento da inteligência emocional infantil desde os primeiros estágios da vida.
 
-Mais do que oferecer informacao isolada, a proposta do sistema e reunir **conhecimento especializado**, **troca de experiencias reais** e **suporte assistido por inteligencia artificial** em um unico ambiente digital.
+Mais do que oferecer informação isolada, a proposta do sistema e reunir **conhecimento especializado**, **troca de experiências reais** e **suporte assistido por inteligência artificial** em um único ambiente digital.
 
 ### Como o Sistema Funciona
 
-Ao se cadastrar na plataforma, o usuario passa a ter acesso a tres pilares principais:
+Ao se cadastrar na plataforma, o usuário passa a ter acesso a três pilares principais:
 
-| Pilar | Descricao | Valor gerado |
+| Pilar | Descrição | Valor gerado |
 | --- | --- | --- |
-| **Conteudo** | Catalogo de artigos especializados para leitura e aprofundamento. | Apoia o aprendizado estruturado sobre desenvolvimento emocional infantil. |
-| **Comunidade** | Espaco de interacao entre pais e responsaveis, com publicacoes, curtidas e comentarios. | Incentiva suporte mutuo, empatia e compartilhamento de vivencias. |
-| **Rede de Apoio com IA** | Chat inteligente integrado ao Google Gemini, com historico de conversas salvo. | Traduz conceitos tecnicos em orientacoes praticas para o cotidiano familiar. |
+| **Conteúdo** | Catálogo de artigos especializados para leitura e aprofundamento. | Apoia o aprendizado estruturado sobre desenvolvimento emocional infantil. |
+| **Comunidade** | Espaço de interação entre pais e responsáveis, com publicações, curtidas e comentários. | Incentiva suporte mútuo, empatia e compartilhamento de vivências. |
+| **Rede de Apoio com IA** | Chat inteligente integrado ao Google Gemini, com histórico de conversas salvo. | Traduz conceitos técnicos em orientações práticas para o cotidiano familiar. |
 
-Essa estrutura permite que a plataforma atue tanto no **apoio preventivo** quanto no **apoio situacional**, ajudando os usuarios a aprender, trocar experiencias e tomar decisoes mais conscientes no dia a dia.
+Essa estrutura permite que a plataforma atue tanto no **apoio preventivo** quanto no **apoio situacional**, ajudando os usuários a aprender, trocar experiências e tomar decisões mais conscientes no dia a dia.
 
-## Acesso Rapido
+## Acesso Rápido
 
 | Recurso | Link |
 | --- | --- |
-| Frontend em producao | https://littleminds-front.vercel.app |
-| Backend em producao | https://littleminds.onrender.com |
-| Repositorio do frontend | https://github.com/rodrigoacm10/littleminds-front |
-| Repositorio do backend | https://github.com/rodrigoacm10/littleminds |
-| Prototipo no Figma | **[Adicionar link do Figma aqui]** |
+| Frontend em produção | https://littleminds-front.vercel.app |
+| Backend em produção | https://littleminds.onrender.com |
+| Repositório do frontend | https://github.com/rodrigoacm10/littleminds-front |
+| Repositório do backend | https://github.com/rodrigoacm10/littleminds |
+| Protótipo no Figma | https://www.figma.com/design/01M2cwh6EzCQjLqCgjUhbT/Educa%C3%A7%C3%A3o-dom%C3%A9stica-para-crian%C3%A7as?node-id=0-1&t=X7zsM2eXJN2WxWyh-0 |
 
 ## Credenciais de Teste
 
-Para fins de avaliacao, a banca pode utilizar as seguintes credenciais:
+Para fins de avaliação, a banca pode utilizar as seguintes credenciais:
 
 | Perfil | Email | Senha |
 | --- | --- | --- |
-| Usuario padrao | `teste@gmail.com` | `Teste1234` |
+| Usuário Padrão | `teste@gmail.com` | `Teste1234` |
 | Especialista | `testeespecialista@gmail.com` | `Teste1234` |
 
-> **Atencao sobre infraestrutura:** o backend esta hospedado na camada gratuita do Render. Em periodos de inatividade, o servidor pode entrar em hibernacao e a primeira requisicao pode levar entre **50 segundos e 1 minuto** para responder. Esse comportamento e esperado e nao representa falha da aplicacao.
+> **Atenção sobre infraestrutura:** o backend esta hospedado na camada gratuita do Render. Em períodos de inatividade, o servidor pode entrar em hibernação e a primeira requisição pode levar entre **50 segundos e 1 minuto** para responder. Esse comportamento e esperado e não representa falha da aplicação.
 
 ## Funcionalidades
 
 ### Requisitos Funcionais
 
-- Cadastro de usuarios com fluxo de autenticacao.
-- Login com validacao de credenciais.
-- Leitura de artigos e navegacao por catalogo de conteudos.
-- Publicacao de experiencias no forum da comunidade.
-- Interacao social por meio de curtidas e comentarios.
+- Cadastro de usuários com fluxo de autenticação.
+- Login com validação de credenciais.
+- Leitura de artigos e navegação por catálogo de conteúdos.
+- Publicação de experiências no fórum da comunidade.
+- Interação social por meio de curtidas e comentários.
 - Chatbot com IA integrado ao Google Gemini.
-- Persistencia do historico de conversas com a IA.
-- Consumo de dados protegidos por autenticacao via token JWT.
+- Persistência do histórico de conversas com a IA.
+- Consumo de dados protegidos por autenticação via token JWT.
 
-### Requisitos Nao Funcionais
+### Requisitos Não Funcionais
 
 - Senhas protegidas por hash no backend.
-- Rotas protegidas com autenticacao e autorizacao.
+- Rotas protegidas com autenticação e autorização.
 - Arquitetura separada entre frontend, backend e banco de dados.
 - Interface web moderna, responsiva e orientada a usabilidade.
-- Disponibilizacao em nuvem para acesso publico.
+- Disponibilização em nuvem para acesso público.
 - Suporte a testes automatizados para estabilidade funcional.
 
 ## Arquitetura e Tecnologias
 
-### Visao Geral da Arquitetura
+### Visão Geral da Arquitetura
 
-O Little Minds foi concebido com arquitetura distribuida, separando responsabilidades entre interface, servicos de negocio, persistencia de dados e camada de inteligencia artificial.
+O Little Minds foi concebido com arquitetura distribuída, separando responsabilidades entre interface, serviços de negócio, persistência de dados e camada de inteligência artificial.
 
 ```text
 Usuario
@@ -113,53 +113,53 @@ Backend API (Node.js + NestJS, deploy no Render)
   +--> Integracao com Google Gemini
 ```
 
-### Stack Tecnologica
+### Stack Tecnológica
 
 | Camada | Tecnologia | Finalidade |
 | --- | --- | --- |
-| Frontend | React + Vite + TypeScript + Tailwind CSS | Interface da aplicacao e experiencia do usuario |
-| Backend | Node.js + NestJS | Regras de negocio, autenticacao, API REST e integracoes |
-| Banco de Dados | PostgreSQL no Neon DB | Persistencia de usuarios, conteudos, posts, comentarios e historicos |
+| Frontend | React + Vite + TypeScript + Tailwind CSS | Interface da aplicação e experiência do usuário |
+| Backend | Node.js + NestJS | Regras de negócio, autenticação, API REST e integrações |
+| Banco de Dados | PostgreSQL no Neon DB | Persistência de usuários, conteúdos, posts, comentários e históricos |
 | IA | Google Gemini | Suporte conversacional contextualizado |
 | Deploy Frontend | Vercel | Hospedagem da interface web |
 | Deploy Backend | Render | Hospedagem da API |
-| Documentacao da API | Swagger | Documentacao e exploracao dos endpoints |
-| Prototipacao | Figma | Prototipacao do MVP e validacao de fluxo |
-| Gestao | Trello com Kanban | Organizacao do backlog e acompanhamento do time |
+| Documentação da API | Swagger | Documentação e exploração dos endpoints |
+| Prototipação | Figma | Prototipação do MVP e validação de fluxo |
+| Gestão | Trello com Kanban | Organização do backlog e acompanhamento do time |
 
-### Estrutura de Solucao
+### Estrutura de Solução
 
 - **Frontend:** aplicacao SPA desenvolvida em React com Vite, conectada a API por meio da variavel `VITE_API_URL`.
 - **Backend:** API desacoplada em NestJS, responsavel por autenticacao, regras de negocio, comunidade, conteudos e integracao com IA.
 - **Persistencia:** PostgreSQL hospedado no Neon DB, escolhido pelo bom custo-beneficio e facilidade de operacao.
 - **IA aplicada:** Google Gemini utilizado para oferecer respostas mais naturais, acessiveis e alinhadas ao contexto do usuario.
 
-## Evolucao de Codigo e Qualidade
+## Evolução de Código e Qualidade
 
 ### Processo de Desenvolvimento
 
-O desenvolvimento do projeto seguiu praticas alinhadas a ambientes profissionais de engenharia de software:
+O desenvolvimento do projeto seguiu práticas alinhadas a ambientes profissionais de engenharia de software:
 
-- Uso de **Conventional Commits** para padronizacao do historico de alteracoes.
-- Trabalho em **branches separadas por funcionalidade ou correcao**.
-- Integracao das mudancas por meio de **Pull Requests (PRs)**.
-- Organizacao do fluxo de trabalho com **Kanban no Trello**.
-- Validacao visual e funcional do produto com prototipacao previa no **Figma**.
+- Uso de **Conventional Commits** para padronizacao do historico de alterações.
+- Trabalho em **branches separadas por funcionalidade ou correção**.
+- Integração das mudancas por meio de **Pull Requests (PRs)**.
+- Organização do fluxo de trabalho com **Kanban no Trello**.
+- Validação visual e funcional do produto com prototipação prévia no **Figma**.
 
-### Qualidade Tecnica
+### Qualidade Técnica
 
-Para ampliar a confiabilidade da aplicacao, foram adotadas praticas de verificacao em diferentes niveis:
+Para ampliar a confiabilidade da aplicação, foram adotadas práticas de verificação em diferentes níveis:
 
-| Tipo de validacao | Objetivo |
+| Tipo de validação | Objetivo |
 | --- | --- |
-| Testes unitarios | Verificar comportamentos isolados de funcoes, componentes e regras de validacao |
-| Testes de integracao | Garantir a comunicacao correta entre modulos, paginas e fluxos de autenticacao |
-| Testes E2E | Simular o uso real da aplicacao e validar jornadas criticas ponta a ponta |
-| Swagger | Documentar os endpoints da API de forma padronizada e auditavel |
+| Testes unitários | Verificar comportamentos isolados de funções, componentes e regras de validação |
+| Testes de integração | Garantir a comunicação correta entre módulos, páginas e fluxos de autenticação |
+| Testes E2E | Simular o uso real da aplicação e validar jornadas críticas ponta a ponta |
+| Swagger | Documentar os endpoints da API de forma padronizada e auditável |
 
-### Evidencias Presentes Neste Frontend
+### Evidências Presentes Neste Frontend
 
-Este repositorio possui scripts e estrutura de testes que sustentam a qualidade do software:
+Este repositório possui scripts e estrutura de testes que sustentam a qualidade do software:
 
 ```bash
 npm run test
@@ -167,35 +167,35 @@ npm run test:coverage
 npm run test:e2e
 ```
 
-Arquivos de exemplo incluidos neste frontend:
+Arquivos de exemplo incluídos neste frontend:
 
-- Testes unitarios com Vitest.
-- Testes de integracao para paginas e hooks.
+- Testes unitários com Vitest.
+- Testes de integração para páginas e hooks.
 - Testes end-to-end com Playwright.
-- Relatorios de cobertura gerados em `coverage/`.
+- Relatórios de cobertura gerados em `coverage/`.
 
 ## Como Executar Localmente
 
-### Pre-requisitos
+### Pré-requisitos
 
 - Node.js instalado
 - npm instalado
 - Git instalado
 
-### 1. Clonar o repositorio
+### 1. Clonar o repositório
 
 ```bash
 git clone https://github.com/rodrigoacm10/littleminds-front.git
 cd littleminds-front
 ```
 
-### 2. Instalar as dependencias
+### 2. Instalar as dependências
 
 ```bash
 npm install
 ```
 
-### 3. Configurar variaveis de ambiente
+### 3. Configurar variáveis de ambiente
 
 Crie um arquivo `.env` na raiz do projeto com a URL da API:
 
@@ -203,7 +203,7 @@ Crie um arquivo `.env` na raiz do projeto com a URL da API:
 VITE_API_URL=https://littleminds.onrender.com
 ```
 
-Se desejar executar o frontend apontando para uma API local, basta substituir o valor de `VITE_API_URL` pela URL correspondente ao backend em execucao.
+Se desejar executar o frontend apontando para uma API local, basta substituir o valor de `VITE_API_URL` pela URL correspondente ao backend em execução.
 
 ### 4. Iniciar o ambiente de desenvolvimento
 
@@ -211,13 +211,13 @@ Se desejar executar o frontend apontando para uma API local, basta substituir o 
 npm run dev
 ```
 
-Por padrao, o Vite disponibilizara a aplicacao localmente em uma URL semelhante a:
+Por padrão, o Vite disponibilizará a aplicação localmente em uma URL semelhante a:
 
 ```text
 http://localhost:5173
 ```
 
-### 5. Build de producao
+### 5. Build de produção
 
 ```bash
 npm run build
@@ -239,21 +239,21 @@ npm run test:e2e
 
 ## Equipe Desenvolvedora
 
-Projeto academico desenvolvido em equipe, com colaboracao multidisciplinar entre design, desenvolvimento e validacao.
+Projeto acadêmico desenvolvido em equipe, com colaboração multidisciplinar entre design, desenvolvimento e validação.
 
 | Integrante | Papel/Responsabilidade |
 | --- | --- |
-| [Nome 1] | [Ex.: Product Owner / Full Stack Developer] |
-| [Nome 2] | [Ex.: Frontend Developer] |
-| [Nome 3] | [Ex.: Backend Developer] |
-| [Nome 4] | [Ex.: UX/UI Designer] |
-| [Nome 5] | [Ex.: QA / Documentacao] |
-| [Nome 6] | [Opcional] |
-| [Nome 7] | [Opcional] |
-| [Nome 8] | [Opcional] |
+| Carlos Alberto Ramalho Bezerra Neto | [Ex.: Product Owner / Full Stack Developer] |
+| Diego Henrique Rodrigues | [Ex.: Frontend Developer] |
+| Eliel Lucas Trajano Neto | [Ex.: Backend Developer] |
+| Fabianne Arezes de Oliveira Firmino Cabral | [Ex.: UX/UI Designer] |
+| José Gabriel de Oliveira Lino | [Ex.: QA / Documentacao] |
+| Monique Rafaela Carvalho Lopes | [Opcional] |
+| Rafael Antônio Ribeiro Galvão Mendes | [Opcional] |
+| Rodrigo Andrade Cavalcante Muniz | [Opcional] |
 
-## Consideracoes Finais
+## Considerações Finais
 
-O **Little Minds** representa a aplicacao de engenharia de software em um contexto de alto impacto social. A plataforma foi concebida para oferecer suporte concreto a familias, promovendo educacao emocional infantil com base em conteudo, interacao comunitaria e inteligencia artificial.
+O **Little Minds** representa a aplicação de engenharia de software em um contexto de alto impacto social. A plataforma foi concebida para oferecer suporte concreto a famílias, promovendo educação emocional infantil com base em conteúdo, interação comunitária e inteligência artificial.
 
-Do ponto de vista tecnico, o projeto demonstra preocupacao com **arquitetura**, **qualidade de codigo**, **testabilidade**, **documentacao**, **boas praticas de versionamento** e **deploy em nuvem**, atendendo aos criterios esperados para avaliacao academica de um produto digital funcional.
+Do ponto de vista técnico, o projeto demonstra preocupação com **arquitetura**, **qualidade de código**, **testabilidade**, **documentação**, **boas práticas de versionamento** e **deploy em nuvem**, atendendo aos critérios esperados para avaliação acadêmica de um produto digital funcional.
