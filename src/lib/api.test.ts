@@ -1,12 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import {
-  ApiError,
-  createArticle,
-  getMe,
-  listArticles,
-  login,
-  publishArticle,
-} from './api'
+import { getMe, listArticles, login, publishArticle } from './api'
 
 const fetchMock = vi.fn()
 
@@ -122,7 +115,7 @@ describe('api', () => {
         email: 'ana@littleminds.com',
         password: 'Senha123',
       }),
-    ).rejects.toMatchObject<ApiError>({
+    ).rejects.toMatchObject({
       message: 'Email ou senha invalidos.',
       code: 'INVALID_CREDENTIALS',
     })
@@ -141,7 +134,7 @@ describe('api', () => {
         email: 'ana@littleminds.com',
         password: 'Senha123',
       }),
-    ).rejects.toMatchObject<ApiError>({
+    ).rejects.toMatchObject({
       message: 'Resposta sem dados retornados pela API.',
     })
   })
