@@ -8,10 +8,10 @@ export function AuthHero() {
           Little Minds
         </div>
         <h1 className="max-w-full text-[clamp(3rem,6vw,5.7rem)] leading-[0.94] font-semibold tracking-[-0.06em] text-[#42210b] lg:max-w-[11ch]">
-          Um ponto de entrada acolhedor para familias e especialistas.
+          Um ponto de entrada acolhedor para famílias e especialistas.
         </h1>
         <p className="max-w-[34rem] text-[1.06rem] leading-7 text-[#42210bcc]">
-          Acesse sua conta para conversar com a IA, acompanhar discussoes e manter o
+          Acesse sua conta para conversar com a IA, acompanhar discussões e manter o
           cuidado infantil em um fluxo simples e seguro.
         </p>
 
