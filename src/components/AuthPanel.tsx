@@ -82,7 +82,7 @@ export function AuthPanel({
 
       <div className="grid gap-1 rounded-2xl border border-[#7b4e2f]/10 bg-[#fff7ef] p-4">
         <span className="text-[0.74rem] font-bold uppercase tracking-[0.12em] text-[#b06f45]">
-          API base
+
         </span>
         <code>{API_BASE_URL}</code>
       </div>
