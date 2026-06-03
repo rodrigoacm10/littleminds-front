@@ -1,4 +1,4 @@
-import { API_BASE_URL, type AuthUser } from '../lib/api'
+import { type AuthUser } from '../lib/api'
 import { Link } from 'react-router'
 import type {
   AuthMode,
