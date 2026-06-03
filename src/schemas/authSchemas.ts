@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const passwordRule =
-  'A senha precisa ter ao menos 8 caracteres, incluindo letra maiuscula, minuscula e numero.'
+  'A senha precisa ter ao menos 8 caracteres, incluindo letra maiúscula, minúscula e número.'
 
 const passwordSchema = z
   .string()

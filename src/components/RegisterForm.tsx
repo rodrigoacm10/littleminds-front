@@ -10,22 +10,22 @@ const roleOptions: Array<{
   label: string
   description: string
 }> = [
-  {
-    value: 'PARENT',
-    label: 'Responsavel',
-    description: 'Para pais, maes e cuidadores acompanharem o desenvolvimento infantil.',
-  },
-  {
-    value: 'SPECIALIST',
-    label: 'Especialista',
-    description: 'Para profissionais que apoiam familias com orientacoes especializadas.',
-  },
-  {
-    value: 'ADMIN',
-    label: 'Administrador',
-    description: 'Perfil administrativo com acesso ampliado dentro da plataforma.',
-  },
-]
+    {
+      value: 'PARENT',
+      label: 'Responsável',
+      description: 'Para pais, mães e cuidadores acompanharem o desenvolvimento infantil.',
+    },
+    {
+      value: 'SPECIALIST',
+      label: 'Especialista',
+      description: 'Para profissionais que apoiam famílias com orientações especializadas.',
+    },
+    {
+      value: 'ADMIN',
+      label: 'Administrador',
+      description: 'Perfil administrativo com acesso ampliado dentro da plataforma.',
+    },
+  ]
 
 interface RegisterFormProps {
   form: UseFormReturn<RegisterFormValues>
