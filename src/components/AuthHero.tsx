@@ -18,26 +18,26 @@ export function AuthHero() {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           <article className="grid gap-2 rounded-[1.4rem] border border-[#7b4e2f]/10 bg-[rgba(255,251,245,0.62)] p-5 backdrop-blur-md">
             <span className="text-[0.76rem] font-bold uppercase tracking-[0.12em] text-[#a46842]">
-              JWT + sessao
+
             </span>
             <strong className="leading-6 font-semibold text-[#4c2910]">
-              Token persistido e restauracao com `/auth/me`.
+
             </strong>
           </article>
           <article className="grid gap-2 rounded-[1.4rem] border border-[#7b4e2f]/10 bg-[rgba(255,251,245,0.62)] p-5 backdrop-blur-md">
             <span className="text-[0.76rem] font-bold uppercase tracking-[0.12em] text-[#a46842]">
-              Validacao clara
+
             </span>
             <strong className="leading-6 font-semibold text-[#4c2910]">
-              Formularios com Zod e mensagens objetivas.
+
             </strong>
           </article>
           <article className="grid gap-2 rounded-[1.4rem] border border-[#7b4e2f]/10 bg-[rgba(255,251,245,0.62)] p-5 backdrop-blur-md">
             <span className="text-[0.76rem] font-bold uppercase tracking-[0.12em] text-[#a46842]">
-              API pronta
+
             </span>
             <strong className="leading-6 font-semibold text-[#4c2910]">
-              Base configurada para `littleminds.onrender.com`.
+
             </strong>
           </article>
         </div>
