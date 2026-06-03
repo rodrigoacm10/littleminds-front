@@ -1,4 +1,4 @@
-import { API_BASE_URL, type AuthUser } from '../lib/api'
+import { type AuthUser } from '../lib/api'
 import { Link } from 'react-router'
 import type {
   AuthMode,
@@ -80,17 +80,10 @@ export function AuthPanel({
         </div>
       </div>
 
-      <div className="grid gap-1 rounded-2xl border border-[#7b4e2f]/10 bg-[#fff7ef] p-4">
-        <span className="text-[0.74rem] font-bold uppercase tracking-[0.12em] text-[#b06f45]">
-          API base
-        </span>
-        <code>{API_BASE_URL}</code>
-      </div>
-
       {booting ? (
         <div className="grid gap-2 rounded-2xl border border-[#b06f45]/14 bg-[#fff7ef] p-4">
-          <strong>Restaurando sessao...</strong>
-          <p>Validando token salvo antes de liberar o formulario.</p>
+          <strong>Restaurando sessão...</strong>
+          <p>Carregando informações da sua conta para um acesso seguro.</p>
         </div>
       ) : user ? (
         <div className="grid gap-2 rounded-2xl border border-[rgba(59,130,96,0.2)] bg-[#eefaf4] p-4 text-[#185a39]">

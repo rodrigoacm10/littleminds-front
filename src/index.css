@@ -27,15 +27,6 @@ body {
   min-width: 320px;
 }
 
-button,
-input,
-select {
-  font: inherit;
-}
-
-button {
-  color: inherit;
-}
 
 p,
 h1,

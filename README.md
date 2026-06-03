@@ -42,32 +42,32 @@ Mais do que oferecer informação isolada, a proposta do sistema e reunir **conh
 
 Ao se cadastrar na plataforma, o usuário passa a ter acesso a três pilares principais:
 
-| Pilar | Descrição | Valor gerado |
-| --- | --- | --- |
-| **Conteúdo** | Catálogo de artigos especializados para leitura e aprofundamento. | Apoia o aprendizado estruturado sobre desenvolvimento emocional infantil. |
-| **Comunidade** | Espaço de interação entre pais e responsáveis, com publicações, curtidas e comentários. | Incentiva suporte mútuo, empatia e compartilhamento de vivências. |
-| **Rede de Apoio com IA** | Chat inteligente integrado ao Google Gemini, com histórico de conversas salvo. | Traduz conceitos técnicos em orientações práticas para o cotidiano familiar. |
+| Pilar                    | Descrição                                                                               | Valor gerado                                                                 |
+| ------------------------ | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| **Conteúdo**             | Catálogo de artigos especializados para leitura e aprofundamento.                       | Apoia o aprendizado estruturado sobre desenvolvimento emocional infantil.    |
+| **Comunidade**           | Espaço de interação entre pais e responsáveis, com publicações, curtidas e comentários. | Incentiva suporte mútuo, empatia e compartilhamento de vivências.            |
+| **Rede de Apoio com IA** | Chat inteligente integrado ao Google Gemini, com histórico de conversas salvo.          | Traduz conceitos técnicos em orientações práticas para o cotidiano familiar. |
 
 Essa estrutura permite que a plataforma atue tanto no **apoio preventivo** quanto no **apoio situacional**, ajudando os usuários a aprender, trocar experiências e tomar decisões mais conscientes no dia a dia.
 
 ## Acesso Rápido
 
-| Recurso | Link |
-| --- | --- |
-| Frontend em produção | https://littleminds-front.vercel.app |
-| Backend em produção | https://littleminds.onrender.com |
-| Repositório do frontend | https://github.com/rodrigoacm10/littleminds-front |
-| Repositório do backend | https://github.com/rodrigoacm10/littleminds |
-| Protótipo no Figma | https://www.figma.com/design/01M2cwh6EzCQjLqCgjUhbT/Educa%C3%A7%C3%A3o-dom%C3%A9stica-para-crian%C3%A7as?node-id=0-1&t=X7zsM2eXJN2WxWyh-0 |
+| Recurso                 | Link                                                                                                                                      |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Frontend em produção    | https://littleminds-front.vercel.app                                                                                                      |
+| Backend em produção     | https://littleminds.onrender.com                                                                                                          |
+| Repositório do frontend | https://github.com/rodrigoacm10/littleminds-front                                                                                         |
+| Repositório do backend  | https://github.com/rodrigoacm10/littleminds                                                                                               |
+| Protótipo no Figma      | https://www.figma.com/design/01M2cwh6EzCQjLqCgjUhbT/Educa%C3%A7%C3%A3o-dom%C3%A9stica-para-crian%C3%A7as?node-id=0-1&t=X7zsM2eXJN2WxWyh-0 |
 
 ## Credenciais de Teste
 
 Para fins de avaliação, a banca pode utilizar as seguintes credenciais:
 
-| Perfil | Email | Senha |
-| --- | --- | --- |
-| Usuário Padrão | `teste@gmail.com` | `Teste1234` |
-| Especialista | `testeespecialista@gmail.com` | `Teste1234` |
+| Perfil         | Email                         | Senha       |
+| -------------- | ----------------------------- | ----------- |
+| Usuário Padrão | `teste@gmail.com`             | `Teste1234` |
+| Especialista   | `testeespecialista@gmail.com` | `Teste1234` |
 
 > **Atenção sobre infraestrutura:** o backend esta hospedado na camada gratuita do Render. Em períodos de inatividade, o servidor pode entrar em hibernação e a primeira requisição pode levar entre **50 segundos e 1 minuto** para responder. Esse comportamento e esperado e não representa falha da aplicação.
 
@@ -115,17 +115,17 @@ Backend API (Node.js + NestJS, deploy no Render)
 
 ### Stack Tecnológica
 
-| Camada | Tecnologia | Finalidade |
-| --- | --- | --- |
-| Frontend | React + Vite + TypeScript + Tailwind CSS | Interface da aplicação e experiência do usuário |
-| Backend | Node.js + NestJS | Regras de negócio, autenticação, API REST e integrações |
-| Banco de Dados | PostgreSQL no Neon DB | Persistência de usuários, conteúdos, posts, comentários e históricos |
-| IA | Google Gemini | Suporte conversacional contextualizado |
-| Deploy Frontend | Vercel | Hospedagem da interface web |
-| Deploy Backend | Render | Hospedagem da API |
-| Documentação da API | Swagger | Documentação e exploração dos endpoints |
-| Prototipação | Figma | Prototipação do MVP e validação de fluxo |
-| Gestão | Trello com Kanban | Organização do backlog e acompanhamento do time |
+| Camada              | Tecnologia                               | Finalidade                                                           |
+| ------------------- | ---------------------------------------- | -------------------------------------------------------------------- |
+| Frontend            | React + Vite + TypeScript + Tailwind CSS | Interface da aplicação e experiência do usuário                      |
+| Backend             | Node.js + NestJS                         | Regras de negócio, autenticação, API REST e integrações              |
+| Banco de Dados      | PostgreSQL no Neon DB                    | Persistência de usuários, conteúdos, posts, comentários e históricos |
+| IA                  | Google Gemini                            | Suporte conversacional contextualizado                               |
+| Deploy Frontend     | Vercel                                   | Hospedagem da interface web                                          |
+| Deploy Backend      | Render                                   | Hospedagem da API                                                    |
+| Documentação da API | Swagger                                  | Documentação e exploração dos endpoints                              |
+| Prototipação        | Figma                                    | Prototipação do MVP e validação de fluxo                             |
+| Gestão              | Trello com Kanban                        | Organização do backlog e acompanhamento do time                      |
 
 ### Estrutura de Solução
 
@@ -150,12 +150,12 @@ O desenvolvimento do projeto seguiu práticas alinhadas a ambientes profissionai
 
 Para ampliar a confiabilidade da aplicação, foram adotadas práticas de verificação em diferentes níveis:
 
-| Tipo de validação | Objetivo |
-| --- | --- |
-| Testes unitários | Verificar comportamentos isolados de funções, componentes e regras de validação |
-| Testes de integração | Garantir a comunicação correta entre módulos, páginas e fluxos de autenticação |
-| Testes E2E | Simular o uso real da aplicação e validar jornadas críticas ponta a ponta |
-| Swagger | Documentar os endpoints da API de forma padronizada e auditável |
+| Tipo de validação    | Objetivo                                                                        |
+| -------------------- | ------------------------------------------------------------------------------- |
+| Testes unitários     | Verificar comportamentos isolados de funções, componentes e regras de validação |
+| Testes de integração | Garantir a comunicação correta entre módulos, páginas e fluxos de autenticação  |
+| Testes E2E           | Simular o uso real da aplicação e validar jornadas críticas ponta a ponta       |
+| Swagger              | Documentar os endpoints da API de forma padronizada e auditável                 |
 
 ### Evidências Presentes Neste Frontend
 
@@ -241,16 +241,16 @@ npm run test:e2e
 
 Projeto acadêmico desenvolvido em equipe, com colaboração multidisciplinar entre design, desenvolvimento e validação.
 
-| Integrante | Papel/Responsabilidade |
-| --- | --- |
-| Carlos Alberto Ramalho Bezerra Neto | Product Owner |
-| Diego Henrique Rodrigues | Desenvolvedor FrontEnd |
-| Eliel Lucas Trajano Neto | Desenvolvedor BackEnd |
-| Fabianne Arezes de Oliveira Firmino Cabral | Desenvolvedora FrontEnd |
-| José Gabriel de Oliveira Lino | QA / Testes |
-| Monique Rafaela Carvalho Lopes | UX/UI Designer |
-| Rafael Antônio Ribeiro Galvão Mendes | QA / Testes |
-| Rodrigo Andrade Cavalcante Muniz | Desenvolvedor Full Stack / Documentação |
+| Integrante                                 | Papel/Responsabilidade                  |
+| ------------------------------------------ | --------------------------------------- |
+| Rodrigo Andrade Cavalcante Muniz           | Desenvolvedor Full Stack / Documentação |
+| Carlos Alberto Ramalho Bezerra Neto        | Product Owner                           |
+| Diego Henrique Rodrigues                   | Desenvolvedor FrontEnd                  |
+| Eliel Lucas Trajano Neto                   | Desenvolvedor BackEnd                   |
+| Fabianne Arezes de Oliveira Firmino Cabral | Desenvolvedora FrontEnd                 |
+| José Gabriel de Oliveira Lino              | QA / Testes                             |
+| Monique Rafaela Carvalho Lopes             | UX/UI Designer                          |
+| Rafael Antônio Ribeiro Galvão Mendes       | QA / Testes                             |
 
 ## Considerações Finais
 
