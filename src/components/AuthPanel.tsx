@@ -84,7 +84,7 @@ export function AuthPanel({
         <span className="text-[0.74rem] font-bold uppercase tracking-[0.12em] text-[#b06f45]">
 
         </span>
-        <code>{API_BASE_URL}</code>
+
       </div>
 
       {booting ? (
