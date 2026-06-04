@@ -505,3 +505,61 @@ test('specialist can create, edit and publish an article', async ({ page }) => {
   await page.getByRole('button', { name: 'Publicar' }).click()
   await expect(page.getByText('Publicado')).toBeVisible()
 })
+
+test('login with invalid credentials shows error message', async ({ page }) => {
+  await mockApp(page, 'PARENT')
+
+  await page.goto('/login')
+  await page.route('https://littleminds.onrender.com/auth/login', (route) =>
+    route.fulfill({
+      status: 401,
+      contentType: 'application/json',
+      body: JSON.stringify({ success: false, error: 'INVALID_CREDENTIALS' }),
+    }),
+  )
+
+  await page.getByPlaceholder('voce@exemplo.com').fill('errado@teste.com')
+  await page.getByPlaceholder('Digite sua senha').fill('SenhaErrada')
+  await page.getByRole('button', { name: 'Entrar agora' }).click()
+
+  await expect(page.getByText('Email ou senha invalidos.')).toBeVisible()
+})
+
+test('new user can register and is redirected to login', async ({ page }) => {
+  await mockApp(page, 'PARENT')
+
+  await page.goto('/cadastro')
+  await page.getByPlaceholder('Como devemos te chamar?').fill('Carlos Lima')
+  await page.getByPlaceholder('voce@exemplo.com').fill('carlos@teste.com')
+  await page.getByRole('combobox').selectOption('PARENT')
+  await page.getByPlaceholder('Crie uma senha forte').fill('Senha123')
+  await page.getByPlaceholder('Repita a senha').fill('Senha123')
+  await page.getByRole('button', { name: 'Criar conta' }).click()
+
+  await expect(
+    page.getByText(/Conta criada com sucesso. Agora faca login para continuar./i),
+  ).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Entrar agora' })).toBeVisible()
+})
+
+test('logged user can logout and is redirected to login', async ({ page }) => {
+  await mockApp(page, 'PARENT')
+
+  await login(page, 'ana@familia.com')
+  await expect(page.getByRole('link', { name: 'IA' })).toBeVisible()
+
+  await page.getByRole('button', { name: 'Sair' }).click()
+
+  await expect(page.getByRole('button', { name: 'Entrar agora' })).toBeVisible()
+})
+
+test('specialist sees research page and not only parent content', async ({ page }) => {
+  await mockApp(page, 'SPECIALIST')
+
+  await login(page, 'ana@littleminds.com')
+  await page.getByRole('link', { name: 'Pesquisas' }).click()
+
+  await expect(page.getByRole('heading', { name: 'Biblioteca de artigos' })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Criar artigo' })).toBeVisible()
+  await expect(page.getByText('Brincadeiras sensoriais')).toBeVisible()
+})
